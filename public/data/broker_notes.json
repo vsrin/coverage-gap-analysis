@@ -1,0 +1,73 @@
+{
+  "clientId": "CLT-10045",
+  "broker": {
+    "name": "Jane Wilson",
+    "contactEmail": "jwilson@brokeragefirm.com",
+    "contactPhone": "312-555-1234"
+  },
+  "notes": [
+    {
+      "date": "2024-02-15",
+      "author": "Jane Wilson",
+      "content": "Client expressed concern about rising property values and whether current limits are adequate. Discussed conducting formal property valuation."
+    },
+    {
+      "date": "2024-02-28",
+      "author": "Tom Jenkins",
+      "content": "Property valuation completed by ABC Valuation Services. Report indicates building replacement cost at LOC1 should be increased by approximately 20% to account for current construction costs."
+    },
+    {
+      "date": "2024-03-10",
+      "author": "Jane Wilson",
+      "content": "Client expanding product line to include components for medical devices. This represents increased product liability exposure that should be addressed at renewal."
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "Coverage",
+      "description": "Increase property limits to align with current valuation",
+      "priority": "High",
+      "status": "Pending Client Approval"
+    },
+    {
+      "category": "Coverage",
+      "description": "Add cyber liability policy",
+      "priority": "High",
+      "status": "Pending Client Approval"
+    },
+    {
+      "category": "Risk Management",
+      "description": "Implement formal business continuity plan",
+      "priority": "Medium",
+      "status": "Recommended"
+    },
+    {
+      "category": "Coverage",
+      "description": "Add umbrella/excess liability policy",
+      "priority": "High",
+      "status": "Pending Client Approval"
+    }
+  ],
+  "renewal": {
+    "date": "2025-01-01",
+    "strategy": "Market all lines for competitive quotes. Focus on addressing identified coverage gaps and managing premium costs with potentially higher limits.",
+    "timeline": [
+      {
+        "date": "2024-09-15",
+        "activity": "Begin renewal data collection"
+      },
+      {
+        "date": "2024-10-01",
+        "activity": "Prepare submission to markets"
+      },
+      {
+        "date": "2024-11-15",
+        "activity": "Present options to client"
+      },
+      {
+        "date": "2024-12-15",
+        "activity": "Bind coverage"
+      }
+    ]
+  }
+}

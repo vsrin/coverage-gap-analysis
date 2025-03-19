@@ -1,0 +1,168 @@
+{
+  "clientId": "CLT-10045",
+  "recommendationSets": [
+    {
+      "id": "REC-001",
+      "gapId": "GAP-001",
+      "title": "Building Valuation Adjustment",
+      "description": "Increase building limits based on professional valuation",
+      "options": [
+        {
+          "id": "OPT-001-A",
+          "description": "Increase building limit at Location 1 to $4,200,000 (full replacement cost)",
+          "premium_impact": "+$3,500 annual premium",
+          "coverage_impact": "Full replacement cost coverage",
+          "recommended": true
+        },
+        {
+          "id": "OPT-001-B",
+          "description": "Increase building limit at Location 1 to $4,000,000 (partial increase)",
+          "premium_impact": "+$2,500 annual premium",
+          "coverage_impact": "95% replacement cost coverage",
+          "recommended": false
+        },
+        {
+          "id": "OPT-001-C",
+          "description": "Maintain current limits with Functional Replacement Cost endorsement",
+          "premium_impact": "+$1,200 annual premium",
+          "coverage_impact": "Repair/replace with less costly materials but maintain functionality",
+          "recommended": false
+        }
+      ],
+      "implementation": {
+        "urgency": "High - Should be addressed before next renewal",
+        "process": "Submit updated Statement of Values to carrier with valuation report",
+        "documentation": "Professional valuation report from ABC Valuation Services dated 2024-02-28"
+      }
+    },
+    {
+      "id": "REC-002",
+      "gapId": "GAP-002",
+      "title": "Business Income Enhancement",
+      "description": "Adjust business income coverage to match actual recovery timeline",
+      "options": [
+        {
+          "id": "OPT-002-A",
+          "description": "Increase Business Income limit to $1,500,000 with 18-month Extended Period of Indemnity",
+          "premium_impact": "+$2,800 annual premium",
+          "coverage_impact": "Full coverage for extended business interruption",
+          "recommended": true
+        },
+        {
+          "id": "OPT-002-B",
+          "description": "Increase Business Income limit to $1,250,000 with 12-month Extended Period of Indemnity",
+          "premium_impact": "+$1,900 annual premium",
+          "coverage_impact": "Partial coverage for extended interruption",
+          "recommended": false
+        }
+      ],
+      "implementation": {
+        "urgency": "Medium - Should be addressed within 60 days",
+        "process": "Submit updated business income worksheet to carrier",
+        "documentation": "Business Income Worksheet completed on 2024-03-05"
+      }
+    },
+    {
+      "id": "REC-003",
+      "gapId": "GAP-003",
+      "title": "Products Liability Enhancement",
+      "description": "Increase products-completed operations coverage",
+      "options": [
+        {
+          "id": "OPT-003-A",
+          "description": "Increase products-completed operations aggregate to $5,000,000",
+          "premium_impact": "+$4,200 annual premium",
+          "coverage_impact": "Higher protection for product liability claims",
+          "recommended": true
+        },
+        {
+          "id": "OPT-003-B",
+          "description": "Add $5,000,000 Umbrella policy covering products liability",
+          "premium_impact": "+$12,500 annual premium",
+          "coverage_impact": "Higher limits across all liability coverages",
+          "recommended": true
+        }
+      ],
+      "implementation": {
+        "urgency": "High - Should be addressed immediately",
+        "process": "Submit application for increased limits or umbrella coverage",
+        "documentation": "Product liability exposure analysis dated 2024-03-12"
+      }
+    },
+    {
+      "id": "REC-004",
+      "gapId": "GAP-004",
+      "title": "Property Deductible Adjustment",
+      "description": "Reduce property deductible to industry standard",
+      "options": [
+        {
+          "id": "OPT-004-A",
+          "description": "Reduce property deductible from $25,000 to $10,000",
+          "premium_impact": "+$1,800 annual premium",
+          "coverage_impact": "Lower out-of-pocket for claims",
+          "recommended": true
+        },
+        {
+          "id": "OPT-004-B",
+          "description": "Reduce property deductible from $25,000 to $15,000",
+          "premium_impact": "+$900 annual premium",
+          "coverage_impact": "Moderate reduction in out-of-pocket expenses",
+          "recommended": false
+        }
+      ],
+      "implementation": {
+        "urgency": "Low - Can be addressed at renewal",
+        "process": "Request endorsement from carrier",
+        "documentation": "Claims history analysis showing frequency of small claims"
+      }
+    },
+    {
+      "id": "REC-005",
+      "gapId": "GAP-005",
+      "title": "Cyber Liability Addition",
+      "description": "Add cyber liability coverage",
+      "options": [
+        {
+          "id": "OPT-005-A",
+          "description": "Add $1,000,000 Cyber Liability policy",
+          "premium_impact": "+$8,500 annual premium",
+          "coverage_impact": "Protection for data breaches, ransomware, and cyber business interruption",
+          "recommended": true
+        },
+        {
+          "id": "OPT-005-B",
+          "description": "Add $500,000 Cyber Liability policy",
+          "premium_impact": "+$5,200 annual premium",
+          "coverage_impact": "Basic cyber protection with lower limits",
+          "recommended": false
+        }
+      ],
+      "implementation": {
+        "urgency": "High - Should be addressed immediately",
+        "process": "Complete cyber application and security questionnaire",
+        "documentation": "Cyber risk assessment completed on 2024-03-01"
+      }
+    }
+  ],
+  "totalRecommendedPremiumImpact": {
+    "minimum": "+$12,500",
+    "recommended": "+$18,800",
+    "comprehensive": "+$29,800"
+  },
+  "riskManagementRecommendations": [
+    {
+      "id": "RM-001",
+      "title": "Business Continuity Planning",
+      "description": "Develop formal business continuity plan to reduce business income exposure",
+      "benefit": "Could reduce business income coverage costs by 5-10% and improve recovery time after loss",
+      "resources": "Template available through carrier risk management department"
+    },
+    {
+      "id": "RM-002",
+      "title": "Product Quality Control Documentation",
+      "description": "Enhance documentation of quality control procedures for manufactured products",
+      "benefit": "May qualify for products liability premium credit and reduce claims frequency",
+      "resources": "Industry association provides certification program"
+    }
+  ]
+}

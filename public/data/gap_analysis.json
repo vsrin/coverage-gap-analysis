@@ -1,0 +1,106 @@
+{
+  "clientId": "CLT-10045",
+  "analysisDate": "2024-03-15",
+  "analyst": "John Smith",
+  "gaps": [
+    {
+      "id": "GAP-001",
+      "severity": "High",
+      "category": "Property",
+      "description": "Building values for Location 1 appear to be underinsured by approximately 20% based on current construction costs.",
+      "impact": "In the event of a total loss, client may face a $700,000 coverage shortfall.",
+      "recommendation": "Increase building limit to $4,200,000 to align with current replacement cost estimates.",
+      "status": "Open"
+    },
+    {
+      "id": "GAP-002",
+      "severity": "Medium",
+      "category": "Property",
+      "description": "Business Income limit is insufficient based on financial records showing 18-month recovery period.",
+      "impact": "Extended business interruption would exceed current limits by approximately $500,000.",
+      "recommendation": "Increase BI limit to $1,500,000 with extended period of indemnity endorsement.",
+      "status": "Open"
+    },
+    {
+      "id": "GAP-003",
+      "severity": "High",
+      "category": "General Liability",
+      "description": "Products-completed operations coverage is inadequate for manufacturing risk exposure.",
+      "impact": "Product liability claim could exceed policy limits, especially with multiple occurrences.",
+      "recommendation": "Increase products-completed operations aggregate limit to $5,000,000.",
+      "status": "Open"
+    },
+    {
+      "id": "GAP-004",
+      "severity": "Low",
+      "category": "Property",
+      "description": "Property policy deductible is higher than industry standard for similar risks.",
+      "impact": "Higher out-of-pocket expenses for frequent small claims.",
+      "recommendation": "Consider reducing property deductible to $10,000 with slight premium adjustment.",
+      "status": "Open"
+    },
+    {
+      "id": "GAP-005",
+      "severity": "High",
+      "category": "Cyber",
+      "description": "No cyber liability coverage despite significant digital asset exposure.",
+      "impact": "Complete lack of coverage for data breaches, ransomware, business interruption from cyber events.",
+      "recommendation": "Add cyber liability policy with minimum $1M limit including coverage for business interruption.",
+      "status": "Open"
+    }
+  ],
+  "crossSellOpportunities": [
+    {
+      "id": "CS-001",
+      "product": "Cyber Liability",
+      "description": "Client has significant data exposure with no cyber coverage in place. Manufacturing operations with connected equipment present additional risk vectors.",
+      "annualPremiumEstimate": 8500,
+      "priority": "High"
+    },
+    {
+      "id": "CS-002",
+      "product": "Equipment Breakdown",
+      "description": "Client's manufacturing equipment represents significant value without specialized breakdown coverage beyond standard property policy.",
+      "annualPremiumEstimate": 3200,
+      "priority": "Medium"
+    },
+    {
+      "id": "CS-003",
+      "product": "Umbrella/Excess Liability",
+      "description": "Given high product liability exposure, recommend $5M umbrella coverage to provide adequate protection above primary policy limits.",
+      "annualPremiumEstimate": 12500,
+      "priority": "High"
+    },
+    {
+      "id": "CS-004",
+      "product": "Environmental Liability",
+      "description": "Manufacturing operations have potential pollution exposures not covered under standard property or liability policies.",
+      "annualPremiumEstimate": 6800,
+      "priority": "Medium"
+    }
+  ],
+  "benchmarkData": {
+    "industry": "Manufacturing - Metal Products",
+    "averageLimits": {
+      "property": {
+        "buildingAndContents": "Values plus 10% margin",
+        "businessIncome": "12-18 months projected income",
+        "deductible": "$10,000 - $15,000"
+      },
+      "generalLiability": {
+        "perOccurrence": "$1M - $2M",
+        "aggregate": "$2M - $4M",
+        "productsCompleted": "$2M - $5M"
+      },
+      "umbrella": "$5M - $10M",
+      "cyber": "$1M - $2M"
+    },
+    "commonEndorsements": [
+      "Equipment Breakdown",
+      "Ordinance or Law",
+      "Flood (for non-high-hazard zones)",
+      "Additional Insured - Vendors",
+      "Product Recall Expense"
+    ]
+  }
+}

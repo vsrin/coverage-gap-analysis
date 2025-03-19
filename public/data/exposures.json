@@ -1,0 +1,82 @@
+{
+  "clientId": "CLT-10045",
+  "propertyExposures": [
+    {
+      "locationId": "LOC1",
+      "address": "123 Main St, Chicago, IL",
+      "buildingDescription": "2-story metal and concrete construction, built 2010, 45,000 sq ft",
+      "occupancy": "Manufacturing - Primary operations",
+      "fireProtection": "Fully sprinklered, class 3 construction",
+      "buildingValue": 3500000,
+      "contentsValue": 1500000,
+      "businessIncomeValue": 5000000,
+      "hazards": [
+        "Machine shop operations",
+        "CNC equipment",
+        "Moderate combustible loading",
+        "Welding operations",
+        "Material handling equipment"
+      ]
+    },
+    {
+      "locationId": "LOC2",
+      "address": "456 Warehouse Ave, Chicago, IL",
+      "buildingDescription": "1-story tilt-up concrete, built 2015, 30,000 sq ft",
+      "occupancy": "Warehouse - Storage and distribution",
+      "fireProtection": "Fully sprinklered, class 2 construction",
+      "buildingValue": 1500000,
+      "contentsValue": 500000,
+      "businessIncomeValue": 1000000,
+      "hazards": [
+        "Finished product storage",
+        "Raw materials storage",
+        "Shipping/receiving operations",
+        "Light rack storage under 12 ft"
+      ]
+    }
+  ],
+  "liabilityExposures": {
+    "products": [
+      {
+        "productName": "Metal Fasteners",
+        "annualRevenue": 5000000,
+        "description": "Specialized fasteners for automotive and aerospace industries",
+        "hazardLevel": "High",
+        "notes": "Critical component that could lead to significant damages if failure occurs"
+      },
+      {
+        "productName": "Metal Components",
+        "annualRevenue": 3000000,
+        "description": "Custom machined parts for various industries",
+        "hazardLevel": "Medium",
+        "notes": "Less critical applications but still potential for property damage claims"
+      },
+      {
+        "productName": "Hardware Products",
+        "annualRevenue": 2000000,
+        "description": "Commercial and consumer hardware products",
+        "hazardLevel": "Medium",
+        "notes": "Consumer exposure increases claims frequency potential"
+      }
+    ],
+    "premises": [
+      {
+        "locationId": "LOC1",
+        "visitorTraffic": "Moderate",
+        "proximityExposures": "Industrial area, limited public exposure",
+        "specialHazards": "Loading dock operations, limited customer visits"
+      },
+      {
+        "locationId": "LOC2",
+        "visitorTraffic": "Low",
+        "proximityExposures": "Industrial park, some public roads",
+        "specialHazards": "Truck traffic, material handling equipment"
+      }
+    ],
+    "operations": {
+      "contractorOperations": "Occasional installation services (<10% of revenue)",
+      "offPremisesWork": "Limited technical service visits to customer locations",
+      "subcontractors": "Occasional use for specialized services, transportation"
+    }
+  }
+}

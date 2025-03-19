@@ -1,0 +1,76 @@
+{
+  "industry": "Manufacturing - Metal Products",
+  "revenueSize": "$10M - $50M",
+  "benchmarks": {
+    "property": {
+      "coverageLimits": {
+        "buildingAndContents": "100% of replacement cost plus 10-15% margin",
+        "businessIncome": "12-18 months of projected revenue",
+        "ordinanceOrLaw": "Typically included at 10-25% of building value",
+        "deductibles": {
+          "standard": "$5,000 - $15,000",
+          "wind/hail": "$10,000 - $25,000",
+          "flood/earthquake": "$25,000 - $100,000 where applicable"
+        }
+      },
+      "typicalPremiumRange": "$0.15 - $0.30 per $100 of insured value",
+      "commonEndorsements": [
+        "Equipment Breakdown",
+        "Ordinance or Law",
+        "Business Income - Extended Period of Indemnity",
+        "Flood (non-high hazard zones)",
+        "Backup of Sewers and Drains"
+      ]
+    },
+    "generalLiability": {
+      "coverageLimits": {
+        "perOccurrence": "$1M - $2M",
+        "generalAggregate": "$2M - $4M",
+        "productsCompletedOperations": "$2M - $5M",
+        "personalAdvertisingInjury": "$1M - $2M"
+      },
+      "typicalPremiumRange": "$0.50 - $1.25 per $1,000 of revenue",
+      "commonEndorsements": [
+        "Additional Insured - Vendors",
+        "Additional Insured - Completed Operations",
+        "Primary and Noncontributory",
+        "Waiver of Subrogation",
+        "Product Recall Expense"
+      ]
+    },
+    "umbrella": {
+      "coverageLimits": {
+        "small": "$5M",
+        "medium": "$10M",
+        "large": "$15M+"
+      },
+      "typicalPremiumRange": "$5,000 - $15,000 for $5M limit",
+      "marketPenetration": "75% of similar businesses carry umbrella coverage"
+    },
+    "cyber": {
+      "coverageLimits": {
+        "small": "$1M",
+        "medium": "$2M - $3M",
+        "large": "$5M+"
+      },
+      "typicalPremiumRange": "$5,000 - $15,000 for $1M limit",
+      "marketPenetration": "60% of similar businesses carry cyber coverage"
+    },
+    "workers_compensation": {
+      "experience_modifier_range": "0.75 - 1.25",
+      "industry_rate_group": "Manufacturing - Metal Products",
+      "typicalClasses": [
+        "3400 - Metal Goods Manufacturing",
+        "8810 - Clerical Office Employees",
+        "8742 - Outside Sales"
+      ]
+    }
+  },
+  "riskManagementBenchmarks": {
+    "formalSafetyProgram": "85% of businesses have formal program",
+    "qualityControl": "90% have documented quality control procedures",
+    "businessContinuity": "55% have formal business continuity plan",
+    "cybersecurity": "65% have formal cybersecurity protocols",
+    "employeeTraining": "80% conduct regular safety training"
+  }
+}

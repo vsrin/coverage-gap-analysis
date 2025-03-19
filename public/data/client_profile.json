@@ -1,0 +1,29 @@
+{
+  "clientId": "CLT-10045",
+  "clientName": "Acme Manufacturing Co.",
+  "industry": "Manufacturing",
+  "subIndustry": "Metal Products",
+  "revenueRange": "$10M - $50M",
+  "employees": 75,
+  "yearEstablished": 2005,
+  "locations": 2,
+  "riskFactors": {
+    "propertyExposure": "High",
+    "productLiabilityExposure": "High",
+    "operationsExposure": "Medium",
+    "cyberExposure": "Medium",
+    "autoExposure": "Low"
+  },
+  "claimsHistory": {
+    "rating": "Favorable",
+    "threYearCount": 2,
+    "fiveYearTotal": 45000
+  },
+  "riskManagement": {
+    "score": "Good",
+    "formalSafetyProgram": true,
+    "qualityControlProcess": true,
+    "businessContinuity": false,
+    "employeeTraining": true
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "clientId": "CLT-10045",
+  "clientName": "Acme Manufacturing Co.",
+  "policies": [
+    {
+      "id": "POL-12345",
+      "policyNumber": "CPP-12345-01",
+      "namedInsured": "Acme Manufacturing Co.",
+      "carrier": "ABC Insurance",
+      "coverageType": "Property",
+      "effectiveDate": "2024-01-01",
+      "expirationDate": "2025-01-01",
+      "status": "Active",
+      "premium": 45000,
+      "limits": {
+        "buildingLimit": 5000000,
+        "contentsLimit": 2000000,
+        "biLimit": 1000000,
+        "deductible": 25000
+      },
+      "locations": [
+        {
+          "id": "LOC1",
+          "address": "123 Main St, Chicago, IL",
+          "buildingValue": 3500000,
+          "contentsValue": 1500000,
+          "occupancy": "Manufacturing"
+        },
+        {
+          "id": "LOC2",
+          "address": "456 Warehouse Ave, Chicago, IL",
+          "buildingValue": 1500000,
+          "contentsValue": 500000,
+          "occupancy": "Warehouse"
+        }
+      ]
+    },
+    {
+      "id": "POL-67890",
+      "policyNumber": "CGL-67890-01",
+      "namedInsured": "Acme Manufacturing Co.",
+      "carrier": "ABC Insurance",
+      "coverageType": "General Liability",
+      "effectiveDate": "2024-01-01",
+      "expirationDate": "2025-01-01",
+      "status": "Active",
+      "premium": 28000,
+      "limits": {
+        "perOccurrence": 1000000,
+        "aggregate": 2000000,
+        "productsCompleted": 2000000,
+        "personalAdvertising": 1000000,
+        "deductible": 10000
+      }
+    }
+  ]
+}
