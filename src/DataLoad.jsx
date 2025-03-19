@@ -1,7 +1,7 @@
 // DataLoad.jsx - Component to load external data files for the demo
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-// This component can replace the static data in your app for the demo
+// This hook attempts to load data from JSON files in the public/data directory
 const useDataLoader = () => {
   const [clientData, setClientData] = useState(null);
   const [policiesData, setPoliciesData] = useState(null);
@@ -63,28 +63,5 @@ const useDataLoader = () => {
     }
   };
 };
-
-// Usage Example:
-// const DataLoadedApp = () => {
-//   const { loading, error, data } = useDataLoader();
-//
-//   if (loading) return <div>Loading data...</div>;
-//   if (error) return <div>{error}</div>;
-//
-//   return (
-//     <div className="flex flex-col min-h-screen bg-gray-100">
-//       <Navigation />
-//       <div className="flex-grow">
-//         <Dashboard 
-//           client={data.client.clientName}
-//           policies={data.policies}
-//           gaps={data.gaps}
-//           riskProfile={data.client}
-//           crossSellOpportunities={data.crossSellOpportunities}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
 
 export default useDataLoader;
