@@ -1,5 +1,5 @@
-// App.jsx with dynamic data loading
-import React from 'react';
+// App.js with integrated Wiki access
+import React, { useState } from 'react';
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -9,9 +9,11 @@ import {
   Check, 
   Info,
   BarChart,
-  Loader
+  Loader,
+  BookOpen
 } from 'lucide-react';
 import useDataLoader from './DataLoad';
+import Wiki from './Wiki';
 
 // Collapsible panel component
 const CollapsiblePanel = ({ title, children, icon, initialState = false }) => {
@@ -330,8 +332,8 @@ const RecommendationDetails = ({ opportunities }) => {
   );
 };
 
-// Navigation component
-const Navigation = () => {
+// Navigation component with Wiki button
+const Navigation = ({ onWikiClick }) => {
   return (
     <div className="w-full bg-gray-800 text-white p-4">
       <div className="flex justify-between items-center">
@@ -341,6 +343,13 @@ const Navigation = () => {
           <button className="hover:bg-gray-700 px-3 py-2 rounded">Policies</button>
           <button className="hover:bg-gray-700 px-3 py-2 rounded">Analysis</button>
           <button className="hover:bg-gray-700 px-3 py-2 rounded">Reports</button>
+          <button 
+            className="hover:bg-gray-700 px-3 py-2 rounded flex items-center"
+            onClick={onWikiClick}
+          >
+            <BookOpen className="h-4 w-4 mr-1" />
+            Wiki
+          </button>
         </div>
         <div>
           <span className="bg-blue-600 px-3 py-2 rounded">Carrier View</span>
@@ -442,16 +451,34 @@ const ErrorScreen = ({ message }) => {
   );
 };
 
-// Main app component with data loading
+// Main app component with data loading and Wiki integration
 const App = () => {
   const { loading, error, data } = useDataLoader();
+  const [showWiki, setShowWiki] = useState(false);
+  
+  const handleWikiClick = () => {
+    setShowWiki(true);
+  };
+  
+  const handleCloseWiki = () => {
+    setShowWiki(false);
+  };
 
+  // Show Wiki when active
+  if (showWiki) {
+    return <Wiki onClose={handleCloseWiki} />;
+  }
+
+  // Show loading screen when loading
   if (loading) return <LoadingScreen />;
+  
+  // Show error screen on error
   if (error) return <ErrorScreen message={error} />;
 
+  // Normal dashboard view
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
-      <Navigation />
+      <Navigation onWikiClick={handleWikiClick} />
       <div className="flex-grow">
         <Dashboard 
           client={data.client.clientName}

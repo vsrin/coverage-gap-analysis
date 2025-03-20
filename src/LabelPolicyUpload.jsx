@@ -1,12 +1,11 @@
-// PolicyUpload.jsx - Enhanced file upload component with functional upload capability
-import React, { useState, useRef } from 'react';
+// LabelPolicyUpload.jsx - File upload component using label approach instead of ref
+import React, { useState } from 'react';
 import { Upload, FileText, CheckCircle, AlertCircle, Info } from 'lucide-react';
 
-const PolicyUpload = ({ onFilesProcessed }) => {
+const LabelPolicyUpload = () => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState(null);
-  const fileInputRef = useRef(null);
 
   const expectedFiles = [
     { 
@@ -33,6 +32,7 @@ const PolicyUpload = ({ onFilesProcessed }) => {
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
+    if (files.length === 0) return;
     
     // In a real app, you would process and validate files here
     setUploading(true);
@@ -55,17 +55,8 @@ const PolicyUpload = ({ onFilesProcessed }) => {
           type: 'success',
           message: `Successfully uploaded ${files.length} file(s)`
         });
-        
-        // In a real app, you would pass processed data to the parent component
-        if (onFilesProcessed) {
-          onFilesProcessed(newFiles);
-        }
       }
     }, 1500);
-  };
-
-  const handleBrowseClick = () => {
-    fileInputRef.current.click();
   };
 
   return (
@@ -75,20 +66,19 @@ const PolicyUpload = ({ onFilesProcessed }) => {
         <h3 className="mt-2 text-lg font-medium">Upload Policy Documents</h3>
         <p className="mt-1 text-sm text-gray-600">Drag and drop policy files or click to browse</p>
         
-        <button 
-          className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          onClick={handleBrowseClick}
-          disabled={uploading}
-        >
-          {uploading ? 'Uploading...' : 'Browse Files'}
-        </button>
-        
+        {/* Using label approach instead of ref for better compatibility */}
+        <label htmlFor="file-upload" className="cursor-pointer">
+          <div className={`mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block ${uploading ? 'opacity-50' : ''}`}>
+            {uploading ? 'Uploading...' : 'Browse Files'}
+          </div>
+        </label>
         <input
+          id="file-upload"
           type="file"
           multiple
-          ref={fileInputRef}
           onChange={handleFileChange}
           className="hidden"
+          disabled={uploading}
         />
         
         <p className="mt-2 text-xs text-gray-500">Supports PDF, DOCX, XLSX, CSV formats (max 10MB per file)</p>
@@ -154,4 +144,4 @@ const PolicyUpload = ({ onFilesProcessed }) => {
   );
 };
 
-export default PolicyUpload;
+export default LabelPolicyUpload;

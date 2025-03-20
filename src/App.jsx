@@ -1,4 +1,4 @@
-// App.jsx with dynamic data loading and functional file upload
+// App.jsx - Original design with added Wiki button
 import React, { useState } from 'react';
 import { 
   ChevronDown, 
@@ -9,10 +9,13 @@ import {
   Check, 
   Info,
   BarChart,
-  Loader
+  Loader,
+  BookOpen
 } from 'lucide-react';
 import useDataLoader from './DataLoad';
-import PolicyUpload from './PolicyUpload';
+//import PolicyUpload from './PolicyUpload';
+import PolicyUpload from './LabelPolicyUpload';
+import Wiki from './Wiki';
 
 // Collapsible panel component
 const CollapsiblePanel = ({ title, children, icon, initialState = false }) => {
@@ -316,8 +319,8 @@ const RecommendationDetails = ({ opportunities }) => {
   );
 };
 
-// Navigation component
-const Navigation = () => {
+// Updated Navigation component with Wiki button
+const Navigation = ({ onWikiClick }) => {
   return (
     <div className="w-full bg-gray-800 text-white p-4">
       <div className="flex justify-between items-center">
@@ -327,6 +330,13 @@ const Navigation = () => {
           <button className="hover:bg-gray-700 px-3 py-2 rounded">Policies</button>
           <button className="hover:bg-gray-700 px-3 py-2 rounded">Analysis</button>
           <button className="hover:bg-gray-700 px-3 py-2 rounded">Reports</button>
+          <button 
+            className="hover:bg-gray-700 px-3 py-2 rounded flex items-center"
+            onClick={onWikiClick}
+          >
+            <BookOpen className="h-4 w-4 mr-1" />
+            Wiki
+          </button>
         </div>
         <div>
           <span className="bg-blue-600 px-3 py-2 rounded">Carrier View</span>
@@ -421,7 +431,7 @@ const LoadingScreen = () => {
 };
 
 // Error component
-const ErrorScreen = ({ message }) => {
+const ErrorScreen = ({ message, onWikiClick }) => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <AlertTriangle className="h-12 w-12 text-red-600 mb-4" />
@@ -432,12 +442,21 @@ const ErrorScreen = ({ message }) => {
         <p className="text-sm text-gray-600 mb-4">
           You can still analyze your coverage by uploading your policy documents directly.
         </p>
-        <button 
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          onClick={() => window.location.href = "#upload"}
-        >
-          Go to Upload Section
-        </button>
+        <div className="flex space-x-4 justify-center">
+          <button 
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            onClick={() => window.location.href = "#upload"}
+          >
+            Go to Upload Section
+          </button>
+          <button 
+            className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 flex items-center"
+            onClick={onWikiClick}
+          >
+            <BookOpen className="h-5 w-5 mr-2" />
+            View Wiki
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -485,17 +504,35 @@ const FileUploadOnlyScreen = () => {
   );
 };
 
-// Main app component with data loading
+// Main app component with Wiki integration
 const App = () => {
   const { loading, error, data } = useDataLoader();
+  const [showWiki, setShowWiki] = useState(false);
   const [showUploadOnly, setShowUploadOnly] = useState(false);
 
+  // Function to open the Wiki
+  const handleWikiClick = () => {
+    setShowWiki(true);
+  };
+
+  // Function to close the Wiki
+  const handleCloseWiki = () => {
+    setShowWiki(false);
+  };
+
+  // Show Wiki when active
+  if (showWiki) {
+    return <Wiki onClose={handleCloseWiki} />;
+  }
+
+  // Show loading screen when loading
   if (loading) return <LoadingScreen />;
   
+  // Show error screen or upload only screen
   if (error || showUploadOnly) {
     return (
       <div className="flex flex-col min-h-screen bg-gray-100">
-        <Navigation />
+        <Navigation onWikiClick={handleWikiClick} />
         <div className="flex-grow p-6">
           {error && !showUploadOnly ? (
             <div className="mb-6">
@@ -537,9 +574,10 @@ const App = () => {
     );
   }
 
+  // Main app with dashboard and Wiki access
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
-      <Navigation />
+      <Navigation onWikiClick={handleWikiClick} />
       <div className="flex-grow">
         <Dashboard 
           client={data.client.clientName}
